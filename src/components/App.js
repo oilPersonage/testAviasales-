@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-import {Provider} from 'react-redux';
-
-import store from '../store/store';
 
 import DataTicket from '../data/default.json'
 
@@ -106,25 +103,23 @@ class App extends Component {
     }
 
     return (
-        <Provider store={store}>
-          <div className="flex container" style={style}>
-            {tickets.length > 0 &&
-              <FilterPanel
-                  activeCurrentcy={activeCurrentcy}
-                  changeCurrency={this.changeCurrency}
-                  filters={filters}
-                  activeItems={activeItems}
-                  changeActiveItems={this.changeActiveItems}
-                  changeFilters={this.changeFilters}/>
-            }
-            <div className="pseudoCont">
-              {filterTicket.length > 0 ?
-                <TicketList tickets={filterTicket} activeCurrentcy={activeCurrentcy}/>
-                  : "Билетов нет"
-              }
-            </div>
-          </div>
-        </Provider>
+      <div className="flex container" style={style}>
+        {tickets.length > 0 &&
+          <FilterPanel
+              activeCurrentcy={activeCurrentcy}
+              changeCurrency={this.changeCurrency}
+              filters={filters}
+              activeItems={activeItems}
+              changeActiveItems={this.changeActiveItems}
+              changeFilters={this.changeFilters}/>
+        }
+        <div className="pseudoCont">
+          {filterTicket.length > 0 ?
+            <TicketList tickets={filterTicket} activeCurrentcy={activeCurrentcy}/>
+              : "Билетов нет"
+          }
+        </div>
+      </div>
     );
   }
 }

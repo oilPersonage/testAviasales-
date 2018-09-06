@@ -16,7 +16,6 @@ export default class FilterItem extends Component {
 
   render() {
     const width = document.body.clientWidth
-    console.log(width)
     const {item} = this.props
     return (
         <div className="filterCountBodyItem" onMouseEnter={()=> width > 800 && this.mouseEnter()} data-name={item} onClick={this.onClick} onMouseLeave={()=> width > 825 && this.mouseLeave()}>
