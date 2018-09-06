@@ -97,7 +97,7 @@ module.exports = (env = {}) => ({
   plugins: env.prod ? productionPlugins : developPlugins,
   devtool: env.prod ? 'source-map' : 'cheap-module-eval-source-map',
   devServer: {
-    port: 3000,
+    port: 3300,
     hot: true,
   },
   resolve: {

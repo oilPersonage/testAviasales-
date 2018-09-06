@@ -4,7 +4,7 @@ import DataTicket from '../data/default.json'
 
 // Views
 import FilterPanel from './FilterPanel/FilterPanel'
-import TicketList from './TicketList/TicketList'
+import TicketItem from './TicketList/TicketItem'
 
 // Small Components
 
@@ -113,9 +113,15 @@ class App extends Component {
               changeActiveItems={this.changeActiveItems}
               changeFilters={this.changeFilters}/>
         }
+
+        {/*<TicketList tickets={filterTicket} activeCurrentcy={activeCurrentcy}/>*/}
         <div className="pseudoCont">
           {filterTicket.length > 0 ?
-            <TicketList tickets={filterTicket} activeCurrentcy={activeCurrentcy}/>
+              <div className="TicketListCont">
+                  {filterTicket.map((ticket, index) => (
+                      <TicketItem ticket={ticket} key={index} activeCurrentcy={activeCurrentcy}/>
+                  ))}
+            </div>
               : "Билетов нет"
           }
         </div>
